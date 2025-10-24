@@ -1,7 +1,214 @@
-.hide {
-    display: none;
+/* Personal Page Palette */
+:root {
+    /* Primary Colors - Based on your portfolio */
+    --dark-navy: #0a192f;          /* Deep navy background */
+    --navy: #112240;               /* Secondary navy */
+    --light-navy: #1d2d50;         /* Lighter navy for cards */
+    --lightest-navy: #233554;      /* Lightest navy for borders */
+    
+    /* Accent Colors */
+    --teal: #64ffda;               /* Main teal accent */
+    --teal-dark: #4ecdc4;          /* Darker teal */
+    --teal-light: #7fffd4;         /* Lighter teal */
+    
+    /* Text Colors */
+    --text-lightest: #ccd6f6;      /* Lightest text */
+    --text-light: #a8b2d1;         /* Light text */
+    --text-medium: #8892b0;        /* Medium text */
+    --text-dark: #495670;          /* Dark text */
+    --white: #ffffff;              /* Pure white */
+    
+    /* Background Colors */
+    --bg-primary: var(--dark-navy);
+    --bg-secondary: var(--navy);
+    --bg-card: var(--light-navy);
+    
+    /* Status Colors */
+    --success: #64ffda;            /* Using teal for success */
+    --warning: #ffd700;            /* Gold warning */
+    --error: #ff6b6b;              /* Soft red error */
+    
+    /* Shadows for Dark Theme */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.5);
+    --shadow-teal: 0 0 20px rgba(100, 255, 218, 0.2);
 }
 
-.show{
-    display: block;
+* {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-lightest);
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 1.5rem 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: var(--teal-dark);
+}
+
+.book-card h3, .book-card p {
+    height: calc(100% / 6);
+}
+
+
+#book-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.book-card {
+    border: 1px solid var(--lightest-navy);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background-color: var(--bg-card);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.book-card:hover {
+    transform: translateY(-0.3125rem);
+    box-shadow: var(--shadow-lg), var(--shadow-teal);
+    border-color: var(--teal);
+}
+
+.book-card p {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--lightest-navy);
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.book-card-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.book-card p strong {
+    color: var(--text-lightest);
+    font-weight: 600;
+}
+
+.library-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Button Styles */
+button {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    border: 1px solid var(--teal);
+    color: var(--teal);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+button:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-0.125rem);
+    box-shadow: var(--shadow-teal);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+dialog {
+    border: 2px solid var(--teal);
+    border-radius: 1rem;
+    padding: 3rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-lightest);
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-left: 1rem;
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: var(--teal-dark);
+    color: var(--dark-navy);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary:hover {
+    background-color: var(--teal-dark);
+    color: var(--dark-navy);
+}
+
+/* Form Elements */
+input, select, textarea {
+    width: 100%;
+    border: 1px solid var(--lightest-navy);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    background-color: var(--bg-card);
+    color: var(--text-lightest);
+    font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.2);
+    background-color: var(--bg-secondary);
 }

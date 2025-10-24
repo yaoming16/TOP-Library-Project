@@ -11,33 +11,33 @@
         <section>
             <div>
                 <h1>My Library</h1>
-                <button id="new-book-btn">New Book</button>
-                <dialog id="modal">
+                <dialog id="modal" closedby="any">
                     <form id="book-form" method="dialog">
                         <div>
-                            <label for="title">Title:</label>
-                            <input type="text" id="title" placeholder="Title" required>
+                            <label for="title-input">Title:</label>
+                            <input type="text" id="title-input" placeholder="Title" required>
                         </div>
                         <div>
-                            <label for="author">Author:</label>
-                            <input type="text" id="author" placeholder="Author" required>
+                            <label for="author-input">Author:</label>
+                            <input type="text" id="author-input" placeholder="Author" required>
                         </div>
                         <div>
-                            <label for="pages">Pages:</label>
-                            <input type="number" id="pages" placeholder="Pages" required>
+                            <label for="pages-input">Pages:</label>
+                            <input type="number" id="pages-input" placeholder="Pages" required>
                         </div>
-                        <div>
-                            <label for="read">Read</label>
-                            <input type="checkbox" id="read"> Read
+                        <div class="checkbox-group">
+                            <label for="read-input">Read:</label>
+                            <input type="checkbox" id="read-input">
                         </div>
-                        <button type="submit">Add Book</button>
-                    </form>      
+                        <button type="submit" id="submit-btn">Add Book</button>
+                    </form>       
                 </dialog>
                 <div id="library-display">
-                    <h2>Library Books</h2>
-                    <div id="book-container">
-
+                    <div class="library-header">
+                        <h2>Library Books</h2>
+                        <button id="new-book-btn">New Book</button>
                     </div>
+                    <div id="book-container"></div>
                 </div>
             </div>
         </section>
