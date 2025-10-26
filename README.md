@@ -23,4 +23,4 @@ This project is part of [The Odin Project](https://www.theodinproject.com/lesson
 - CSS Grid & Flexbox for responsive layouts
 
 ## Project Link
-[Library Project](yaoming16.github.io/TOP-Library-Project/)
+[Library Project](https://yaoming16.github.io/TOP-Library-Project/)
